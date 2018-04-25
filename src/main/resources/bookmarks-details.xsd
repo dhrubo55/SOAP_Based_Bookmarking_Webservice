@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://localhost:8080/bookmarks"
+           xmlns:tns="http://localhost:8080/bookmarks" elementFormDefault="qualified">
+
+  <xs:element name="getBookmarksDetailsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name= "id" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="getBookmarksDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name= "bDetails" type="tns:bookmarksDetails"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="bookmarksDetails">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="url" type="xs:string"/>
+      <xs:element name="tag" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
